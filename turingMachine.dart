@@ -295,7 +295,25 @@ void main() {
   guessNumberTape.write(symbol: "Correct!", at: 24);
   guessNumberTape.write(symbol: "stop", at: 25);
 
-  var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, guessNumberTape];
+  final quineTape = tape();
+  quineTape.write(symbol: "increment next",             at: 0);
+  quineTape.write(symbol: "-1",                         at: 1);
+  quineTape.write(symbol: "if previous not equal",      at: 2);
+  quineTape.write(symbol: "16",                         at: 3);
+  quineTape.write(symbol: "copy from index to index",   at: 4);
+  quineTape.write(symbol: "1",                          at: 5);
+  quineTape.write(symbol: "8",                          at: 6);
+  quineTape.write(symbol: "copy from index to index",   at: 7);
+  quineTape.write(symbol: "8",                          at: 8);
+  quineTape.write(symbol: "11",                         at: 9);
+  quineTape.write(symbol: "print",                      at: 10);
+  quineTape.write(symbol: "print",                      at: 11);
+  quineTape.write(symbol: "move to index",              at: 12);
+  quineTape.write(symbol: "0",                          at: 13);
+  quineTape.write(symbol: "else",                       at: 14);
+  quineTape.write(symbol: "stop",                       at: 15);
+
+  var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
 
   for (var tape in tapes) {
     print("\n---Next Tape---\n");
