@@ -329,88 +329,200 @@ void main() {
   quineTape.write(symbol: "?",        at: 10);
   quineTape.write(symbol: "?",        at: 11);
   quineTape.write(symbol: "?",        at: 12);
+  quineTape.write(symbol: "?",        at: 13);
+  quineTape.write(symbol: "?",        at: 14);
+  quineTape.write(symbol: "?",        at: 15);
 
   // 0
-  quineTape.write(symbol: "copy from index to index",        at: 13);
-  quineTape.write(symbol: "54", at: 14);
-  quineTape.write(symbol: "0", at: 15);
+  quineTape.write(symbol: "copy from index to index",        at: 16);
+  quineTape.write(symbol: "60", at: 17);
+  quineTape.write(symbol: "0", at: 18);
 
   // 1
-  quineTape.write(symbol: "copy from index to index",        at: 16);
-  quineTape.write(symbol: "55", at: 17);
-  quineTape.write(symbol: "1", at: 18);
+  quineTape.write(symbol: "copy from index to index",        at: 19);
+  quineTape.write(symbol: "61", at: 20);
+  quineTape.write(symbol: "1", at: 21);
 
   // 2
-  quineTape.write(symbol: "copy from index to index",        at: 19);
-  quineTape.write(symbol: "56", at: 20);
-  quineTape.write(symbol: "2", at: 21);
+  quineTape.write(symbol: "copy from index to index",        at: 22);
+  quineTape.write(symbol: "62", at: 23);
+  quineTape.write(symbol: "2", at: 24);
 
   // 3
-  quineTape.write(symbol: "copy from index to index",        at: 22);
-  quineTape.write(symbol: "57", at: 23);
-  quineTape.write(symbol: "3", at: 24);
+  quineTape.write(symbol: "copy from index to index",        at: 25);
+  quineTape.write(symbol: "63", at: 26);
+  quineTape.write(symbol: "3", at: 27);
 
   // 4
-  quineTape.write(symbol: "copy from index to index",        at: 25);
-  quineTape.write(symbol: "58", at: 26);
-  quineTape.write(symbol: "4", at: 27);
+  quineTape.write(symbol: "copy from index to index",        at: 28);
+  quineTape.write(symbol: "64", at: 29);
+  quineTape.write(symbol: "4", at: 30);
 
   // 5
-  quineTape.write(symbol: "copy from index to index",        at: 28);
-  quineTape.write(symbol: "59", at: 29);
-  quineTape.write(symbol: "5", at: 30);
+  quineTape.write(symbol: "copy from index to index",        at: 31);
+  quineTape.write(symbol: "65", at: 32);
+  quineTape.write(symbol: "5", at: 33);
 
   // 6
-  quineTape.write(symbol: "copy from index to index",        at: 31);
-  quineTape.write(symbol: "60", at: 32);
-  quineTape.write(symbol: "6", at: 33);
+  quineTape.write(symbol: "copy from index to index",        at: 34);
+  quineTape.write(symbol: "66", at: 35);
+  quineTape.write(symbol: "6", at: 36);
 
   // 7
-  quineTape.write(symbol: "copy from index to index",        at: 34);
-  quineTape.write(symbol: "61", at: 35);
-  quineTape.write(symbol: "7", at: 36);
+  quineTape.write(symbol: "copy from index to index",        at: 37);
+  quineTape.write(symbol: "67", at: 38);
+  quineTape.write(symbol: "7", at: 39);
 
   // 8
-  quineTape.write(symbol: "copy from index to index",        at: 37);
-  quineTape.write(symbol: "62", at: 38);
-  quineTape.write(symbol: "8", at: 39);
+  quineTape.write(symbol: "copy from index to index",        at: 40);
+  quineTape.write(symbol: "68", at: 41);
+  quineTape.write(symbol: "8", at: 42);
 
   // 9
-  quineTape.write(symbol: "copy from index to index",        at: 40);
-  quineTape.write(symbol: "63", at: 41);
-  quineTape.write(symbol: "9", at: 42);
+  quineTape.write(symbol: "copy from index to index",        at: 43);
+  quineTape.write(symbol: "69", at: 44);
+  quineTape.write(symbol: "9", at: 45);
 
   // 10
-  quineTape.write(symbol: "copy from index to index",        at: 43);
-  quineTape.write(symbol: "64", at: 44);
-  quineTape.write(symbol: "10", at: 45);
+  quineTape.write(symbol: "copy from index to index",        at: 46);
+  quineTape.write(symbol: "70", at: 47);
+  quineTape.write(symbol: "10", at: 48);
 
   // 11
-  quineTape.write(symbol: "copy from index to index",        at: 46);
-  quineTape.write(symbol: "65", at: 47);
-  quineTape.write(symbol: "11", at: 48);
+  quineTape.write(symbol: "copy from index to index",        at: 49);
+  quineTape.write(symbol: "71", at: 50);
+  quineTape.write(symbol: "11", at: 51);
 
   // 12
-  quineTape.write(symbol: "copy from index to index",        at: 49);
-  quineTape.write(symbol: "66", at: 50);
-  quineTape.write(symbol: "12", at: 51);
+  quineTape.write(symbol: "copy from index to index",        at: 52);
+  quineTape.write(symbol: "72", at: 53);
+  quineTape.write(symbol: "12", at: 54);
 
-  quineTape.write(symbol: "move to index", at: 52);
-  quineTape.write(symbol: "0", at: 53);
-
-  // print questions
-  quineTape.write(symbol: "increment next", at: 54);
-  quineTape.write(symbol: "-1", at: 55);
-  quineTape.write(symbol: "if previous not equal", at: 56);
+  // 13
+  quineTape.write(symbol: "copy from index to index",        at: 55);
+  quineTape.write(symbol: "73", at: 56);
   quineTape.write(symbol: "13", at: 57);
-  quineTape.write(symbol: "print", at: 58);
-  quineTape.write(symbol: "?", at: 59);
-  quineTape.write(symbol: "move to index", at: 60);
-  quineTape.write(symbol: "0", at: 61);
-  quineTape.write(symbol: "else", at: 62);
-  quineTape.write(symbol: "move to index", at: 63);
-  quineTape.write(symbol: "65", at: 64);
-  quineTape.write(symbol: "stop", at: 65);
+
+  quineTape.write(symbol: "move to index", at: 58);
+  quineTape.write(symbol: "0", at: 59);
+
+  // print question symbols
+  quineTape.write(symbol: "increment next", at: 60);
+  quineTape.write(symbol: "-1", at: 61);
+  quineTape.write(symbol: "if previous not equal", at: 62);
+  quineTape.write(symbol: "16", at: 63);
+  quineTape.write(symbol: "print", at: 64);
+  quineTape.write(symbol: "?", at: 65);
+  quineTape.write(symbol: "move to index", at: 66);
+  quineTape.write(symbol: "0", at: 67);
+  quineTape.write(symbol: "else", at: 68);
+  quineTape.write(symbol: "move to index", at: 69);
+  quineTape.write(symbol: "71", at: 70);
+
+  // 0
+  quineTape.write(symbol: "copy from index to index", at: 71);
+  quineTape.write(symbol: "121", at: 72);
+  quineTape.write(symbol: "0", at: 73);
+
+  // 1
+  quineTape.write(symbol: "copy from index to index", at: 74);
+  quineTape.write(symbol: "122", at: 75);
+  quineTape.write(symbol: "1", at: 76);
+
+  // 2
+  quineTape.write(symbol: "copy from index to index", at: 77);
+  quineTape.write(symbol: "123", at: 78);
+  quineTape.write(symbol: "2", at: 79);
+
+  // 3
+  quineTape.write(symbol: "copy from index to index", at: 80);
+  quineTape.write(symbol: "124", at: 81);
+  quineTape.write(symbol: "3", at: 82);
+
+  // 4
+  quineTape.write(symbol: "copy from index to index", at: 83);
+  quineTape.write(symbol: "125", at: 84);
+  quineTape.write(symbol: "4", at: 85);
+
+  // 5
+  quineTape.write(symbol: "copy from index to index", at: 86);
+  quineTape.write(symbol: "126", at: 87);
+  quineTape.write(symbol: "5", at: 88);
+
+  // 6
+  quineTape.write(symbol: "copy from index to index", at: 89);
+  quineTape.write(symbol: "127", at: 90);
+  quineTape.write(symbol: "6", at: 91);
+
+  // 7
+  quineTape.write(symbol: "copy from index to index", at: 92);
+  quineTape.write(symbol: "128", at: 93);
+  quineTape.write(symbol: "7", at: 94);
+
+  // 8
+  quineTape.write(symbol: "copy from index to index", at: 95);
+  quineTape.write(symbol: "129", at: 96);
+  quineTape.write(symbol: "8", at: 97);
+
+  // 9
+  quineTape.write(symbol: "copy from index to index", at: 98);
+  quineTape.write(symbol: "130", at: 99);
+  quineTape.write(symbol: "9", at: 100);
+
+  // 10
+  quineTape.write(symbol: "copy from index to index", at: 101);
+  quineTape.write(symbol: "131", at: 102);
+  quineTape.write(symbol: "10", at: 103);
+
+  // 11
+  quineTape.write(symbol: "copy from index to index", at: 104);
+  quineTape.write(symbol: "132", at: 105);
+  quineTape.write(symbol: "11", at: 106);
+
+  // 12
+  quineTape.write(symbol: "copy from index to index", at: 107);
+  quineTape.write(symbol: "133", at: 108);
+  quineTape.write(symbol: "12", at: 109);
+
+  // 13
+  quineTape.write(symbol: "copy from index to index", at: 110);
+  quineTape.write(symbol: "134", at: 111);
+  quineTape.write(symbol: "13", at: 112);
+
+  // 14
+  quineTape.write(symbol: "copy from index to index", at: 113);
+  quineTape.write(symbol: "135", at: 114);
+  quineTape.write(symbol: "14", at: 115);
+
+  // 15
+  quineTape.write(symbol: "copy from index to index", at: 116);
+  quineTape.write(symbol: "136", at: 117);
+  quineTape.write(symbol: "15", at: 118);
+
+  // start source code print from copy
+  quineTape.write(symbol: "move to index", at: 119);
+  quineTape.write(symbol: "0", at: 120);
+
+  // print source code
+  quineTape.write(symbol: "increment next", at: 121);
+  quineTape.write(symbol: "15", at: 122);
+  quineTape.write(symbol: "if previous not equal", at: 123);
+  quineTape.write(symbol: "137", at: 124);
+
+  quineTape.write(symbol: "copy from index to index", at: 125);
+  quineTape.write(symbol: "1", at: 126);
+  quineTape.write(symbol: "8", at: 127);
+
+  quineTape.write(symbol: "copy from index to index", at: 128);
+  quineTape.write(symbol: "?", at: 129);
+  quineTape.write(symbol: "11", at: 130);
+
+  quineTape.write(symbol: "print", at: 131);
+  quineTape.write(symbol: "?", at: 132);
+  quineTape.write(symbol: "move to index", at: 133);
+  quineTape.write(symbol: "0", at: 134);
+  quineTape.write(symbol: "else", at: 135);
+  quineTape.write(symbol: "stop", at: 136);
 
   //var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
 var tapes = [quineTape];
