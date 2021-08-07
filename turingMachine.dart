@@ -524,8 +524,7 @@ void main() {
   quineTape.write(symbol: "else", at: 135);
   quineTape.write(symbol: "stop", at: 136);
 
-  //var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
-var tapes = [quineTape];
+  var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
 
   for (var tape in tapes) {
     print("\n---Next Tape---\n");
