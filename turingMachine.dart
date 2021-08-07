@@ -2,6 +2,8 @@ import 'dart:io';
 import 'dart:math';
 
 const DEBUG_PRINT_ENABLED = false;
+const DEBUG_MODE_ENABLED = false;
+const DEBUG_PRINT_TAPE = false;
 
 void debugPrint(String? string) {
   if (DEBUG_PRINT_ENABLED) {
@@ -61,6 +63,9 @@ class FiniteStateControl {
       final value = delegate!.read();
       delegate?.move(to: toIndex);
       delegate?.write(value);
+
+      debugPrint("Value copied: ${value}");
+
       debugPrint("Revert back to index: ${currentIndex}");
       delegate?.move(to: currentIndex);
     }
@@ -86,6 +91,7 @@ class FiniteStateControl {
         debugPrint("${previousSymbol} != ${nextSymbol} NOT EQUAL!");
       }
       else {
+        debugPrint("${previousSymbol} == ${nextSymbol} EQUAL!");
         var symbol = delegate!.nextSymbol();
         while (symbol != "else") {
           symbol = delegate!.nextSymbol();
@@ -96,6 +102,9 @@ class FiniteStateControl {
       debugPrint("OPCODE_MOVE_TO_INDEX");
       final index = int.tryParse(delegate!.nextSymbol())!;
       delegate?.move(to: index - 1);
+    }
+    else {
+      debugPrint("Unknown symbol: ${symbol}, pass");
     }
   }
 }
@@ -111,12 +120,18 @@ abstract class InfiniteTape {
 class MapInfiniteTape implements InfiniteTape {
   final _map = Map<int, String>();
   String read({required int at}) {
+    if (DEBUG_PRINT_TAPE) {
+      print(_map);
+    }
     return _map[at] ?? "";
   }
 
   void write({required String symbol, required int at}) {
     debugPrint("Write symbol: ${symbol}; line ${at}");
     _map[at] = symbol;
+    if (DEBUG_PRINT_TAPE) {
+      print(_map);
+    }
   }
 }
 
@@ -179,6 +194,10 @@ class TuringMachine implements FiniteStateControlDelegate {
       debugPrint("isRunning");
       _finiteStateControl.handle(symbol: symbol);
       symbol = _tapeHead.next();
+      if (DEBUG_MODE_ENABLED) {
+        print("Debug >");
+        stdin.readLineSync();
+      }
     }
   }
 
@@ -296,24 +315,105 @@ void main() {
   guessNumberTape.write(symbol: "stop", at: 25);
 
   final quineTape = tape();
-  quineTape.write(symbol: "increment next",             at: 0);
-  quineTape.write(symbol: "-1",                         at: 1);
-  quineTape.write(symbol: "if previous not equal",      at: 2);
-  quineTape.write(symbol: "16",                         at: 3);
-  quineTape.write(symbol: "copy from index to index",   at: 4);
-  quineTape.write(symbol: "1",                          at: 5);
-  quineTape.write(symbol: "8",                          at: 6);
-  quineTape.write(symbol: "copy from index to index",   at: 7);
-  quineTape.write(symbol: "8",                          at: 8);
-  quineTape.write(symbol: "11",                         at: 9);
-  quineTape.write(symbol: "print",                      at: 10);
-  quineTape.write(symbol: "print",                      at: 11);
-  quineTape.write(symbol: "move to index",              at: 12);
-  quineTape.write(symbol: "0",                          at: 13);
-  quineTape.write(symbol: "else",                       at: 14);
-  quineTape.write(symbol: "stop",                       at: 15);
 
-  var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
+  quineTape.write(symbol: "?",        at: 0);
+  quineTape.write(symbol: "?",        at: 1);
+  quineTape.write(symbol: "?",        at: 2);
+  quineTape.write(symbol: "?",        at: 3);
+  quineTape.write(symbol: "?",        at: 4);
+  quineTape.write(symbol: "?",        at: 5);
+  quineTape.write(symbol: "?",        at: 6);
+  quineTape.write(symbol: "?",        at: 7);
+  quineTape.write(symbol: "?",        at: 8);
+  quineTape.write(symbol: "?",        at: 9);
+  quineTape.write(symbol: "?",        at: 10);
+  quineTape.write(symbol: "?",        at: 11);
+  quineTape.write(symbol: "?",        at: 12);
+
+  // 0
+  quineTape.write(symbol: "copy from index to index",        at: 13);
+  quineTape.write(symbol: "54", at: 14);
+  quineTape.write(symbol: "0", at: 15);
+
+  // 1
+  quineTape.write(symbol: "copy from index to index",        at: 16);
+  quineTape.write(symbol: "55", at: 17);
+  quineTape.write(symbol: "1", at: 18);
+
+  // 2
+  quineTape.write(symbol: "copy from index to index",        at: 19);
+  quineTape.write(symbol: "56", at: 20);
+  quineTape.write(symbol: "2", at: 21);
+
+  // 3
+  quineTape.write(symbol: "copy from index to index",        at: 22);
+  quineTape.write(symbol: "57", at: 23);
+  quineTape.write(symbol: "3", at: 24);
+
+  // 4
+  quineTape.write(symbol: "copy from index to index",        at: 25);
+  quineTape.write(symbol: "58", at: 26);
+  quineTape.write(symbol: "4", at: 27);
+
+  // 5
+  quineTape.write(symbol: "copy from index to index",        at: 28);
+  quineTape.write(symbol: "59", at: 29);
+  quineTape.write(symbol: "5", at: 30);
+
+  // 6
+  quineTape.write(symbol: "copy from index to index",        at: 31);
+  quineTape.write(symbol: "60", at: 32);
+  quineTape.write(symbol: "6", at: 33);
+
+  // 7
+  quineTape.write(symbol: "copy from index to index",        at: 34);
+  quineTape.write(symbol: "61", at: 35);
+  quineTape.write(symbol: "7", at: 36);
+
+  // 8
+  quineTape.write(symbol: "copy from index to index",        at: 37);
+  quineTape.write(symbol: "62", at: 38);
+  quineTape.write(symbol: "8", at: 39);
+
+  // 9
+  quineTape.write(symbol: "copy from index to index",        at: 40);
+  quineTape.write(symbol: "63", at: 41);
+  quineTape.write(symbol: "9", at: 42);
+
+  // 10
+  quineTape.write(symbol: "copy from index to index",        at: 43);
+  quineTape.write(symbol: "64", at: 44);
+  quineTape.write(symbol: "10", at: 45);
+
+  // 11
+  quineTape.write(symbol: "copy from index to index",        at: 46);
+  quineTape.write(symbol: "65", at: 47);
+  quineTape.write(symbol: "11", at: 48);
+
+  // 12
+  quineTape.write(symbol: "copy from index to index",        at: 49);
+  quineTape.write(symbol: "66", at: 50);
+  quineTape.write(symbol: "12", at: 51);
+
+  quineTape.write(symbol: "move to index", at: 52);
+  quineTape.write(symbol: "0", at: 53);
+
+  // print questions
+  quineTape.write(symbol: "increment next", at: 54);
+  quineTape.write(symbol: "-1", at: 55);
+  quineTape.write(symbol: "if previous not equal", at: 56);
+  quineTape.write(symbol: "13", at: 57);
+  quineTape.write(symbol: "print", at: 58);
+  quineTape.write(symbol: "?", at: 59);
+  quineTape.write(symbol: "move to index", at: 60);
+  quineTape.write(symbol: "0", at: 61);
+  quineTape.write(symbol: "else", at: 62);
+  quineTape.write(symbol: "move to index", at: 63);
+  quineTape.write(symbol: "65", at: 64);
+  quineTape.write(symbol: "stop", at: 65);
+
+  //var tapes = [helloWorldTape, countToZeroTape, countToSixteenTape, quineTape, guessNumberTape];
+var tapes = [quineTape];
 
   for (var tape in tapes) {
     print("\n---Next Tape---\n");
