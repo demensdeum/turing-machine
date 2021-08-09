@@ -21,6 +21,18 @@ const OPCODE_COPY_FROM_TO = "copy from index to index";
 const OPCODE_INPUT_TO_NEXT = "input to next";
 const OPCODE_GENERATE_RANDOM_NUMBER_FROM_ZERO_TO_AND_WRITE_AFTER = "generate random number from zero to next and write after";
 
+const opcodes = [
+  OPCODE_STOP,
+  OPCODE_PRINT,
+  OPCODE_INCREMENT_NEXT,
+  OPCODE_DECREMENT_NEXT,
+  OPCODE_IF_PREVIOUS_NOT_EQUAL,
+  OPCODE_MOVE_TO_INDEX,
+  OPCODE_COPY_FROM_TO,
+  OPCODE_INPUT_TO_NEXT,
+  OPCODE_GENERATE_RANDOM_NUMBER_FROM_ZERO_TO_AND_WRITE_AFTER
+];
+
 abstract class FiniteStateControlDelegate {
   String nextSymbol() { return ""; }
   String previousSymbol() { return ""; }
@@ -33,9 +45,26 @@ abstract class FiniteStateControlDelegate {
 
 class FiniteStateControl {
   FiniteStateControlDelegate? delegate = null;
+  final bool _deterministic;
+
+  FiniteStateControl(this._deterministic) {}
 
   void handle({required String symbol}) {
     debugPrint("Symbol: ${symbol}");
+
+    if (_deterministic == false && new Random().nextBool()) {
+      if (int.tryParse(symbol) != null) {
+        debugPrint("Before chaos: ${symbol}");
+        symbol = new Random().nextInt(128).toString();
+        debugPrint("After chaos: ${symbol}");
+      }
+      else {
+        debugPrint("Before chaos: ${symbol}");
+        symbol = opcodes[new Random().nextInt(opcodes.length)];
+        debugPrint("After chaos: ${symbol}");
+      }
+    }
+
     if (symbol == OPCODE_PRINT) {
       final argument = delegate?.nextSymbol();
       print(argument);
@@ -174,7 +203,7 @@ class TapeHead {
 }
 
 class TuringMachine implements FiniteStateControlDelegate {
-  final _finiteStateControl = FiniteStateControl();
+  final _finiteStateControl = FiniteStateControl(true);
   InfiniteTape _infiniteTape;
   TapeHead _tapeHead;
 
